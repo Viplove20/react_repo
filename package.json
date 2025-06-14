@@ -1,0 +1,30 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "React Practice",
+  "keywords": [],
+  "homepage": "https://github.com/Viplove20/react_repo#readme",
+  "bugs": {
+    "url": "https://github.com/Viplove20/react_repo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Viplove20/react_repo.git"
+  },
+  "license": "ISC",
+  "author": "Viplove",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.6.2"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  }
+}
