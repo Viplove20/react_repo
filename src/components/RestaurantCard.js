@@ -6,7 +6,7 @@ const RestaurantCard = (props) => {
   const { id, name, cuisines, avgRating, deliveryTime } =
     resData?.info; //conditional chaing
   return (
-    <Link key={id} to={`/restaurants/${id}`}>
+    <Link style={{ textDecoration: 'none', color: 'inherit' }} key={id} to={`/restaurants/${id}`}>
       <div className="res-card">
         <img
           className="res-image"

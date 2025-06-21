@@ -3,7 +3,7 @@ const menu = [
     card: {
       "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
       info: {
-        resId: 151649,
+        resId: "151649",
         id: "36565525",
         name: "Fixed Thali ",
         category: "Thali",
@@ -44,7 +44,7 @@ const menu = [
     card: {
       "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
       info: {
-        resId: 151649,
+        resId: "151649",
         id: "36565548",
         name: "Special Dal Khichdi  ",
         category: "Thali",
@@ -78,7 +78,7 @@ const menu = [
     card: {
       "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
       info: {
-        resId: 151649,
+        resId: "151649",
         id: "36565535",
         name: "Special Thali",
         category: "Thali",
@@ -119,7 +119,7 @@ const menu = [
     card: {
       "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
       info: {
-        resId: 151649,
+        resId: "151649",
         id: "122334299",
         name: "Delux Thali   ",
         category: "Thali",
@@ -159,7 +159,7 @@ const menu = [
     card: {
       "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
       info: {
-        resId: 151649,
+        resId: "151649",
         id: "36565603",
         name: "Paper Masala Dosa ",
         category: "South Indian",
@@ -194,7 +194,7 @@ const menu = [
     card: {
       "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
       info: {
-        resId: 151649,
+        resId: "151649",
         id: "55986372",
         name: "Cutting Dosa ",
         category: "South Indian",
@@ -225,7 +225,7 @@ const menu = [
     card: {
       "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
       info: {
-        resId: 151649,
+        resId: "151649",
         id: "122334307",
         name: "Sai Spl Dosa ",
         category: "South Indian",
@@ -256,7 +256,7 @@ const menu = [
     card: {
       "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
       info: {
-        resId: 151649,
+        resId: "151649",
         id: "122334311",
         name: "Chesse Dosa ",
         category: "South Indian",
@@ -287,7 +287,7 @@ const menu = [
     card: {
       "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
       info: {
-        resId: 151649,
+        resId: "151649",
         id: "122334319",
         name: "Masala Dosa",
         category: "South Indian",
@@ -322,7 +322,7 @@ const menu = [
     card: {
       "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
       info: {
-        resId: 151649,
+        resId: "151649",
         id: "36565606",
         name: "Paper Plain Dosa",
         category: "South Indian",
@@ -352,7 +352,7 @@ const menu = [
     card: {
       "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
       info: {
-        resId: 151649,
+        resId: "151649",
         id: "36565608",
         name: "Mysore Dosa  ",
         category: "South Indian",

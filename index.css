@@ -165,3 +165,13 @@ background-color: rgb(219, 215, 215);
     height: 225px;
     width: 316px;
 }
+
+.user-card {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.git-user-img{
+    height: 100px;
+    width: 100px;
+}
