@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard.js";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard.js";
 import resList from "../utils/mockData.js";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer.js";
@@ -16,7 +16,7 @@ const Body = () => {
     const [searchedRestaurants, setSearchedRestaurants] = useState(resList);
 
     const [searchText, setSearchText] = useState("");
-
+    
     function onChangeHandler(e){
            if(e.target.value === ''){
                 setSearchedRestaurants(listOfRestaurants)
@@ -30,6 +30,10 @@ const Body = () => {
     function onRestaurantClickHandler(e){
 
     }
+
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
+
     // commented useEffect as this url is blocked due to CORS even with proxy
     // useEffect(() => {
     //     fetchData();
@@ -77,10 +81,11 @@ const Body = () => {
                 
             </div>
             <div className="flex flex-wrap justify-center">
-                {searchedRestaurants.map ((item) =>{
-                    return <RestaurantCard resData = {item} key={item.info.id}/>
-                })}
-                
+               {
+                searchedRestaurants.map((item) => (
+                    item.info.avgRating <= 4.3 ? <RestaurantCardPromoted resData = {item} key={item.info.id}/> : <RestaurantCard resData = {item} key={item.info.id}/>
+                ))
+               } 
             </div>
         </div>
     )
