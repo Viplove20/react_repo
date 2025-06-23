@@ -7,16 +7,19 @@ const RestaurantCard = (props) => {
     resData?.info; //conditional chaing
   return (
     <Link style={{ textDecoration: 'none', color: 'inherit' }} key={id} to={`/restaurants/${id}`}>
-      <div className="res-card">
+      <div className="m-4 p-4 w-52 h-100 bg-orange-100  hover:bg-orange-200 rounded-lg">
         <img
-          className="res-image"
-          alt="'res-img"
+          className="w-44 h-44 rounded-md"
+          alt="res-img"
           src={RESTAURANT_IMG_URL + resData.info.cloudinaryImageId}
         />
-        <h3>{name}</h3>
-        <h6>{cuisines.join(", ")}</h6>
-        <h6>{avgRating}</h6>
-        <h6>{deliveryTime}</h6>
+        <div className="h-40">
+           <h3 className="font-bold text-lg py-2">{name}</h3>
+            <h6 className="font-light">{cuisines.join(", ")}</h6>
+        </div>
+        <div className="py-2">
+          <h6 className="font-medium">{avgRating} ⭐</h6>
+        </div>
       </div>
     </Link>
   );

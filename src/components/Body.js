@@ -3,7 +3,7 @@ import resList from "../utils/mockData.js";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer.js";
 import { useParams } from "react-router";
-import useOnlineStatus from "../utils/useOnlineStatus.js";
+import useOnlineStatus from "../utils/useOnlineStatus.js"; // custom hook
 
 
 const Body = () => {
@@ -49,33 +49,34 @@ const Body = () => {
         return <h1>Looks like you are offline, please check your internet connection!</h1>
     }
     return listOfRestaurants.length === 0 ? <Shimmer/> : (
-        <div className="body">
-            <div className="filter">
-                <div className="search">
-                    <input 
-                    type="text" 
-                    className="search-box" 
-                    placeholder="type..." 
+        <div className="body mx-1">
+            <div className="filter flex justify-center">
+                <div className="search pb-1">
+                    <input className="border border-solid border-amber-300 ml-2 focus:outline focus:outline-orange-400"
+                    type="text"  
+                    placeholder=" search..." 
                     value={searchText} 
                     onChange=
                     //{(e) => setSearchText(e.target.value) }
                     {onChangeHandler}
                     ></input>
-                    <button className="search-btn" 
+                    <button className="px-2 bg-orange-200 m-2 rounded-md hover:bg-orange-300" 
                     onClick={() =>{
                        const filterSearchedRestaurants = listOfRestaurants.filter((res) => ((res.info.name).toLowerCase()).includes(searchText.toLowerCase())
                     );
                     setSearchedRestaurants(filterSearchedRestaurants);
                     }}>Search</button>
-                    <button className="reset-btn" onClick={() => {
+                    <button className="px-2 bg-orange-200 rounded-md  hover:bg-orange-300" onClick={() => {
                         setSearchedRestaurants(listOfRestaurants); 
                         setSearchText('');
                         }}>Reset</button>
+
+                    <button className="px-2 m-2 bg-orange-200 rounded-md  hover:bg-orange-300" onClick={handleFilter}>Top Rated Restaurants</button>
                 </div>
                 
-                <button className="filter-btn" onClick={handleFilter}>Top Rated Restaurants</button>
+                
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap justify-center">
                 {searchedRestaurants.map ((item) =>{
                     return <RestaurantCard resData = {item} key={item.info.id}/>
                 })}
