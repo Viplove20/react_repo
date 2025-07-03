@@ -9,6 +9,9 @@ import Error from "./components/Error.js";
 import ContactUs from "./components/ContactUs.js";
 import RestaurantMenu from "./components/RestaurantMenu.js";
 import userContext from "./utils/userContext.js";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore.js";
+import Cart from "./components/Cart.js";
 
 
 // lazy loading
@@ -25,12 +28,14 @@ const AppLayout = () => {
 
     
     return (
+        <Provider store={appStore}>
         <userContext.Provider value={{loggedInUser: userName}}>
         <div className="app">
             <Header/>
             <Outlet />
         </div>
         </userContext.Provider>
+        </Provider>
     )
 }
 
@@ -54,6 +59,10 @@ const appRouter = createBrowserRouter([
         {
         path: "/restaurants/:resId",
         element: <RestaurantMenu/>
+        },
+        {
+        path: "/cart",
+        element: <Cart/>
         }
         ],
         errorElement: <Error/>

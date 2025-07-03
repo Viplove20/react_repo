@@ -3,10 +3,10 @@ import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import userContext from "../utils/userContext";
-
-
+import { useSelector } from "react-redux";
 
 const Header = () => {
+
     const [btn , setbtn] = useState("Login");
 
     useEffect(() => {
@@ -15,7 +15,9 @@ const Header = () => {
     
     const onlineStatus = useOnlineStatus();
     const {loggedInUser} = useContext(userContext);
-    console.log('user' , loggedInUser);
+    
+    const cartItems = useSelector((store) => store.cart.items);
+    
     return (
         <div className="flex justify-between m-1 bg-orange-200">
             <div className="logo-container">
@@ -25,16 +27,17 @@ const Header = () => {
             </div>
             <div className="flex items-center">
                 <ul className="flex p-4 m-4">
-                    <li className="px-4">{onlineStatus ? "🟢" : "🔴"}</li>
-                    <li className="px-4"><Link to="/">🏠Home</Link></li>
-                    <li className="px-4"><Link to="/about">📰About Us</Link></li>
-                    <li className="px-4"><Link to="/contact">📞Contact Us</Link></li>
-                    <li className="px-4"><Link to="">🛒Cart</Link></li>
-                    <button className="login-btn" onClick={
+                    <li className="px-4"><Link to="/">🏠</Link></li>
+                    <li className="px-4"><Link to="/about">📰</Link></li>
+                    <li className="px-4"><Link to="/contact">📞</Link></li>
+                    <li className="px-4 "><Link to="/cart">🛒({cartItems.length})</Link></li>
+                    <button onClick={
                         () => { 
                             btn === "Login" ? setbtn("Logout") : setbtn("Login")
-                        }}>{btn}</button>
+                        }}>{btn}
+                    </button>
                     <li className="px-4 font-bold">{loggedInUser}</li>
+                    <li className="px-4">{onlineStatus ? "🟢" : "🔴"}</li>
                 </ul>
             </div>
         </div>
